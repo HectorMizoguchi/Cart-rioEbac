@@ -141,7 +141,8 @@ int main()//Int main sempre vai ser executada primeiro, int main é a função prin
 		printf("Escolha a opção desejada do menu\n\n");//informando o usuário de que vai haver um menu.
 		printf("\t1 - Registrar nomes\n");//\t é para criar um espaço antes de mostrar oque ta escrito.
 		printf("\t2 - Consultar nomes\n");//mosntrar as opções de escolhas para usuário poder administrar os usuários
-		printf("\t3 - Deletar nomes\n");
+		printf("\t3 - Deletar nomes\n");//Deletar usuário cadastrado.
+		printf("\t4 - Sair do Sistema\n");//Comando para sair do sistema.
 		printf("Opções: ");//mostrar ao usuário que ele deve escolher uma das opções à acima.
 		
 		scanf("%d", &opcao); //armazena a escolha do usuário "%d é um tipo inteiro"
@@ -167,6 +168,10 @@ int main()//Int main sempre vai ser executada primeiro, int main é a função prin
 				deletar();//puxa e mostra a função deletar
 				break;//serve para o programa parar de rodar o switch case.
 				
+			case 4:
+				printf("Obrigado por usar o sistema!\n\nPressione enter para continuar!");//Menssagem para mostrar ao usúario que a comando foi executado.
+				return 0;
+				break;
 			/*case 4: // testando função
 				teste();
 				break;*/
