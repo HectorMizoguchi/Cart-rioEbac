@@ -132,76 +132,92 @@ int main()//Int main sempre vai ser executada primeiro, int main é a função prin
 	int opcao=0;// Variavel criada para o sistema entender qual a opção que o usário quer que o sistema mostre para o usuário.
 	int laco=1;// variavel criada para fazer o for laco funcionar.
 	//laço criado para o sistema não fechar o sistema quando o usuário terminar uma das ações das opções.
-	for(laco=1;laco=1;)//for(laco=1;laco=1; loco++)Enquanto laço ser = 1 repita até laço ser = 1 *Macete para sempre repetir o laço* ele pode repetir até um numero ex: enquanto loço ser = 1 repita até laço ser = 10.
-	{
-		system("cls");//limpa a tela
-		setlocale(LC_ALL,"portuguese"); //Define a linguagem 
-		
-		printf("###cartório da EBAC###\n\n"); // inicio do menu, printf é responsavel por trazer oque está escrito dentro dos parênteses para o usuário ler. tudo que está entre aspas é texto
-		printf("Escolha a opção desejada do menu\n\n");//informando o usuário de que vai haver um menu.
-		printf("\t1 - Registrar nomes\n");//\t é para criar um espaço antes de mostrar oque ta escrito.
-		printf("\t2 - Consultar nomes\n");//mosntrar as opções de escolhas para usuário poder administrar os usuários
-		printf("\t3 - Deletar nomes\n");//Deletar usuário cadastrado.
-		printf("\t4 - Sair do Sistema\n");//Comando para sair do sistema.
-		printf("Opções: ");//mostrar ao usuário que ele deve escolher uma das opções à acima.
-		
-		scanf("%d", &opcao); //armazena a escolha do usuário "%d é um tipo inteiro"
-		system("cls");//limpa a tela
-		
-		switch(opcao)//Switch Case
-		{
-			case 1:
-				/*printf("Você escolheu o registro de nomes!\n");
-				system("pause");*/
-				registro();//busca a função registro
-				break;//serve para o programa parar de rodar o switch case.
-			
-			case 2:
-				/*printf("Você escolheu o consultar nomes!\n");
-				system("pause");*/
-				consulta();//puxa e mostra a função consulta
-				break;//serve para o programa parar de rodar o switch case.
-				
-			case 3:
-				/*printf("Você escolheu deletar de nomes!\n");
-				system("pause");*/
-				deletar();//puxa e mostra a função deletar
-				break;//serve para o programa parar de rodar o switch case.
-				
-			case 4:
-				printf("Obrigado por usar o sistema!\n\nPressione enter para continuar!");//Menssagem para mostrar ao usúario que a comando foi executado.
-				return 0;
-				break;
-			/*case 4: // testando função
-				teste();
-				break;*/
-			
-			default:
-				system("pause");//pausa o sistema para melhor experiencia do usuário
-				break;//serve para o programa parar de rodar o switch case.
+	char senhaDigitada[10]="a";// Variavel criada para armazenar a senha digitada.
 	
+	printf("###Cartório da Ebac###");// Inicio da tela do menu.
+	printf("Login de administrador!\n\nDigite sua senha:");//pergunta ao usuário a senha para login.
+	scanf("%s",senhaDigitada);//Salva o valor da variavel senhaDigitada
+	
+	if(strcmp(senhaDigitada,"admin")==0){//strcmp é usada para conferir e comparar uma variavel
+
+
+		for(laco=1;laco=1;)//for(laco=1;laco=1; loco++)Enquanto laço ser = 1 repita até laço ser = 1 *Macete para sempre repetir o laço* ele pode repetir até um numero ex: enquanto loço ser = 1 repita até laço ser = 10.
+		{
+			system("cls");//limpa a tela
+			setlocale(LC_ALL,"portuguese"); //Define a linguagem 
 		
-		/*if(opcao == 1) //inicio da seleção
-		{
-			printf("Você escolheu o registro de nomes!\n");
-			system("pause");
+			printf("###cartório da EBAC###\n\n"); // inicio do menu, printf é responsavel por trazer oque está escrito dentro dos parênteses para o usuário ler. tudo que está entre aspas é texto
+			printf("Escolha a opção desejada do menu\n\n");//informando o usuário de que vai haver um menu.
+			printf("\t1 - Registrar nomes\n");//\t é para criar um espaço antes de mostrar oque ta escrito.
+			printf("\t2 - Consultar nomes\n");//mosntrar as opções de escolhas para usuário poder administrar os usuários
+			printf("\t3 - Deletar nomes\n");//Deletar usuário cadastrado.
+			printf("\t4 - Sair do Sistema\n");//Comando para sair do sistema.
+			printf("Opções: ");//mostrar ao usuário que ele deve escolher uma das opções à acima.
+		
+			scanf("%d", &opcao); //armazena a escolha do usuário "%d é um tipo inteiro"
+			system("cls");//limpa a tela
+		
+			switch(opcao)//Switch Case
+			{
+				case 1:
+					/*printf("Você escolheu o registro de nomes!\n");
+					system("pause");*/
+					registro();//busca a função registro
+					break;//serve para o programa parar de rodar o switch case.
+				
+				case 2:
+					/*printf("Você escolheu o consultar nomes!\n");
+					system("pause");*/
+					consulta();//puxa e mostra a função consulta
+					break;//serve para o programa parar de rodar o switch case.
+				
+				case 3:
+					/*printf("Você escolheu deletar de nomes!\n");
+					system("pause");*/
+					deletar();//puxa e mostra a função deletar
+					break;//serve para o programa parar de rodar o switch case.
+					
+				case 4:
+					printf("Obrigado por usar o sistema!\n\nPressione enter para continuar!");//Menssagem para mostrar ao usúario que a comando foi executado.
+					return 0;
+					break;
+				/*case 4: // testando função
+					teste();
+					break;*/
+					
+				default:
+					system("pause");//pausa o sistema para melhor experiencia do usuário
+					break;//serve para o programa parar de rodar o switch case.
+		
+			
+			/*if(opcao == 1) //inicio da seleção
+			{
+				printf("Você escolheu o registro de nomes!\n");
+				system("pause");
+			}
+			if(opcao == 2)
+			{
+				printf("Você escolheu o consultar nomes!\n");
+				system("pause");
 		}
-		if(opcao == 2)
-		{
-			printf("Você escolheu o consultar nomes!\n");
-			system("pause");
+			if(opcao == 3)
+			{
+				printf("Você escolheu deletar de nomes!\n");
+				system("pause");
+			}
+			if(opcao == 4)
+			{
+				printf("Essa opção não está disponivel\n");
+					system("pause");
+			}//fim da seleção
+			*/
+		
+			}
+					
 		}
-		if(opcao == 3)
-		{
-			printf("Você escolheu deletar de nomes!\n");
-			system("pause");
-		}
-		if(opcao == 4)
-		{
-			printf("Essa opção não está disponivel\n");
-			system("pause");
-		}//fim da seleção
-		*/
+	}else{
+		printf("Senha digitada errada!");
 	}
 }
-}
+
+
